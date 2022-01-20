@@ -10,36 +10,36 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Currency Exchange Rate App </title>
 </head>
-<body style="">
-<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+<body style="background-color: #7182f0; background-image: linear-gradient(to right, whitesmoke , #7182f0);">
+<!--div class="navbar navbar-expand-lg fixed-top" style="background-color: #7182f0 !important;">
     <div class="container">
         <a class="navbar-brand" href="../">Currency Exchange <span
                 style="color: rgb(39, 117, 161);"> <strong>App</strong> </span> </a>
         <a class="navbar-tech" href="../">[ CSC 381 - Group 8 ] </a>
     </div>
-</div>
+</div-->
 
-<br><br><br>
-<div class="jumbotron" id="jumbotron" style="text-align: center; margin-top:-50px">
-    <h1 class="display-5" id="devise">Currency</h1>
-    <h5>Exchange Rate Converter</h5>
-    <img class="image" src="{% static 'images/image.jpg' %}" style="width:100px; margin-bottom:-50px; ">
-</div>
-<div class="container">
-    <div class="page-header" id="banner">
+<div class="full" style="display: flex; flex-direction: column;
+align-items: center; justify-content: center; height: 100vh;">
+<div class="container" style="background-color: white !important; border-radius: 10px; padding: 30px 50px;">
+
+    <div class="page-header" id="banner" style="align-items: center;">
         <div class="row">
-            <div class="col-sm-15">
-                <h1 style="align-content: center;"></h1>
+            <div class="col-sm-15" style=" width: 100%; margin: 20px 0;">
+                <h2 style="align-content: center; text-align: center !important; color: black !important;">Currency Converter</h2>
                 <p class="lead" style="margin-left:280px; font-size:2rem">
                 </p>
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container"  style="padding: 0 60px;">
         <div class="currency">
-            <select class="form-control" id="currency-one">
-                <option value="AED">AED</option>
+
+            <select class="form-control" id="currency-one" style="border: 1px solid black; height: 40px;">
+                <option value="AED">
+                    AED
+                </option>
                 <option value="ARS">ARS</option>
                 <option value="AUD">AUD</option>
                 <option value="BGN">BGN</option>
@@ -93,21 +93,21 @@
                 <option value="ZAR">ZAR</option>
             </select>
             <br>
-            <input class="form-control" id="amount-one" style="width:100%;" type="number" value="1"/>
+            <input class="form-control" id="amount-one" style="width:100%; border: 1px solid black; height: 40px;" type="number" value="1"/>
         </div>
     </div>
     <br>
     <div class="swap-btn">
-        <button class="btn btn-outline-primary mx-auto d-block" id="swap" type="button">Swap <i aria-hidden="true"
+        <button class="btn mx-auto d-block" id="swap" type="button" style="color: white; background-color: #7182f0;">Swap <i aria-hidden="true"
                                                                                                 class="fa fa-refresh"></i>
         </button>
     </div>
     <!-- Dynamic rate inserted in DOM based on exchange rate fetched from API -->
-    <div class="rate" id="rate" style="padding-left: 20px;"></div>
+    <div class="rate" id="rate" style="padding-left: 60px; color: black;"></div>
     <br>
-    <div class="container">
+    <div class="container" style="padding: 0 60px;">
         <div class="currency">
-            <select class="form-control" id="currency-two">
+            <select class="form-control" id="currency-two" style="border: 1px solid black; height: 40px;">
                 <option value="AED">AED</option>
                 <option value="ARS">ARS</option>
                 <option value="AUD">AUD</option>
@@ -162,13 +162,13 @@
                 <option value="ZAR">ZAR</option>
             </select>
             <br>
-            <input class="form-control" id="amount-two" placeholder="0" style="width:100%" type="number" value="1"/>
+            <input class="form-control" id="amount-two" placeholder="0" style="width:100%; border: 1px solid black; height: 40px;" type="number" value="1"/>
         </div>
     </div>
     <br><br><br>
     <footer id="footer">
         <div class="row">
-            <div class="col-lg-12" style="text-align: center;"> <br /><br />
+            <div class="col-lg-12" style="text-align: center; color: black;"> <br />
                 <p>Designed by Team Asuquo Samuel &copy; 2020</a>.</p>
 
             </div>
@@ -177,6 +177,7 @@
     </footer>
 
     <script src="{% static 'js/app.js' %}"></script>
+</div>
 </div>
 </body>
 </html>
