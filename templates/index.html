@@ -10,7 +10,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Currency Exchange Rate App </title>
 </head>
-<body style="background-color: #7182f0; background-image: linear-gradient(to right, whitesmoke , #7182f0);">
+<body style="background-color: #7182f0; background-image: linear-gradient(to bottom, whitesmoke , darkslateblue);">
 <!--div class="navbar navbar-expand-lg fixed-top" style="background-color: #7182f0 !important;">
     <div class="container">
         <a class="navbar-brand" href="../">Currency Exchange <span
@@ -33,64 +33,16 @@ align-items: center; justify-content: center; height: 100vh;">
         </div>
     </div>
 
-    <div class="container"  style="padding: 0 60px;">
+    <div class="container" style="padding: 0 60px;">
         <div class="currency">
 
             <select class="form-control" id="currency-one" style="border: 1px solid black; height: 40px;">
-                <option value="AED">
-                    AED
+                {% for currency in currencies %}
+                <option value="{{currency.code}}">
+                    {{ currency.name }} - {{ currency.code }}
                 </option>
-                <option value="ARS">ARS</option>
-                <option value="AUD">AUD</option>
-                <option value="BGN">BGN</option>
-                <option value="BRL">BRL</option>
-                <option value="BSD">BSD</option>
-                <option value="CAD">CAD</option>
-                <option value="CHF">CHF</option>
-                <option value="CLP">CLP</option>
-                <option value="CNY">CNY</option>
-                <option value="COP">COP</option>
-                <option value="CZK">CZK</option>
-                <option value="DKK">DKK</option>
-                <option value="DOP">DOP</option>
-                <option value="EGP">EGP</option>
-                <option value="EUR">EUR</option>
-                <option value="FJD">FJD</option>
-                <option value="GBP">GBP</option>
-                <option value="GTQ">GTQ</option>
-                <option value="HKD">HKD</option>
-                <option value="HRK">HRK</option>
-                <option value="HUF">HUF</option>
-                <option value="IDR">IDR</option>
-                <option value="ILS">ILS</option>
-                <option value="INR">INR</option>
-                <option value="ISK">ISK</option>
-                <option value="JPY">JPY</option>
-                <option value="KRW">KRW</option>
-                <option value="KZT">KZT</option>
-                <option value="MXN">MXN</option>
-                <option value="MYR">MYR</option>
-                <option value="NOK">NOK</option>
-                <option value="NZD">NZD</option>
-                <option value="PAB">PAB</option>
-                <option value="PEN">PEN</option>
-                <option value="PHP">PHP</option>
-                <option value="PKR">PKR</option>
-                <option value="PLN">PLN</option>
-                <option value="PYG">PYG</option>
-                <option value="RON">RON</option>
-                <option value="RUB">RUB</option>
-                <option value="SAR">SAR</option>
-                <option value="SEK">SEK</option>
-                <option value="SGD">SGD</option>
-                <option value="THB">THB</option>
-                <option value="TRY">TRY</option>
-                <option value="TWD">TWD</option>
-                <option value="UAH">UAH</option>
-                <option selected value="USD">USD</option>
-                <option value="UYU">UYU</option>
-                <option value="VND">VND</option>
-                <option value="ZAR">ZAR</option>
+                {% endfor %}
+
             </select>
             <br>
             <input class="form-control" id="amount-one" style="width:100%; border: 1px solid black; height: 40px;" type="number" value="1"/>
@@ -99,7 +51,7 @@ align-items: center; justify-content: center; height: 100vh;">
     <br>
     <div class="swap-btn">
         <button class="btn mx-auto d-block" id="swap" type="button" style="color: white; background-color: #7182f0;">Swap <i aria-hidden="true"
-                                                                                                class="fa fa-refresh"></i>
+                                                                                                class="fa fa-refresh" style="color: white !important;"></i>
         </button>
     </div>
     <!-- Dynamic rate inserted in DOM based on exchange rate fetched from API -->
@@ -108,58 +60,11 @@ align-items: center; justify-content: center; height: 100vh;">
     <div class="container" style="padding: 0 60px;">
         <div class="currency">
             <select class="form-control" id="currency-two" style="border: 1px solid black; height: 40px;">
-                <option value="AED">AED</option>
-                <option value="ARS">ARS</option>
-                <option value="AUD">AUD</option>
-                <option value="BGN">BGN</option>
-                <option value="BRL">BRL</option>
-                <option value="BSD">BSD</option>
-                <option value="CAD">CAD</option>
-                <option value="CHF">CHF</option>
-                <option value="CLP">CLP</option>
-                <option value="CNY">CNY</option>
-                <option value="COP">COP</option>
-                <option value="CZK">CZK</option>
-                <option value="DKK">DKK</option>
-                <option value="DOP">DOP</option>
-                <option value="EGP">EGP</option>
-                <option value="EUR">EUR</option>
-                <option value="FJD">FJD</option>
-                <option value="GBP">GBP</option>
-                <option value="GTQ">GTQ</option>
-                <option value="HKD">HKD</option>
-                <option value="HRK">HRK</option>
-                <option value="HUF">HUF</option>
-                <option value="IDR">IDR</option>
-                <option value="ILS">ILS</option>
-                <option value="INR">INR</option>
-                <option value="ISK">ISK</option>
-                <option value="JPY">JPY</option>
-                <option value="KRW">KRW</option>
-                <option value="KZT">KZT</option>
-                <option value="MXN">MXN</option>
-                <option value="MYR">MYR</option>
-                <option value="NOK">NOK</option>
-                <option value="NZD">NZD</option>
-                <option value="PAB">PAB</option>
-                <option value="PEN">PEN</option>
-                <option value="PHP">PHP</option>
-                <option value="PKR">PKR</option>
-                <option value="PLN">PLN</option>
-                <option value="PYG">PYG</option>
-                <option value="RON">RON</option>
-                <option value="RUB">RUB</option>
-                <option value="SAR">SAR</option>
-                <option value="SEK">SEK</option>
-                <option value="SGD">SGD</option>
-                <option value="THB">THB</option>
-                <option value="TRY">TRY</option>
-                <option value="TWD">TWD</option>
-                <option value="UAH">UAH</option>
-                <option selected value="USD">USD</option>
-                <option value="UYU">UYU</option>
-                <option value="VND">VND</option>
-                <option value="ZAR">ZAR</option>
+                {% for currency in currencies %}
+                <option value="{{currency.code}}">
+                    {{ currency.name }} - {{ currency.code }}
+                </option>
+                {% endfor %}
             </select>
             <br>
             <input class="form-control" id="amount-two" placeholder="0" style="width:100%; border: 1px solid black; height: 40px;" type="number" value="1"/>
